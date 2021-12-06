@@ -35,7 +35,7 @@ let gen_delims = Set<Character>("[]:/?#@$")
 
 extension JSONLD {
     func getRemoteContext(from url: URL) throws -> JSON {
-        let (_data, _, error) = self.loadDocument(url: url, profile: "http://www.w3.org/ns/json-ld#context", requestProfile: ["http://www.w3.org/ns/json-ld#context"])
+        let (_data, _, error) = self.loadDocument(url: url, profile: "https://www.w3.org/ns/json-ld#context", requestProfile: ["https://www.w3.org/ns/json-ld#context"])
         if let error = error {
             try self.apiError(.loading_remote_context_failed(error))
         }

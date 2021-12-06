@@ -257,7 +257,7 @@ public class JSONLD {
     var maxRemoteContexts: Int = 10
 
     public init() {
-        self.base = URL(string: "http://example.org/")!
+        self.base = URL(string: "https://example.org/")!
         self.parsedRemoteContexts = [:]
     }
     
@@ -284,7 +284,7 @@ public class JSONLD {
     }
     
     func _is_absolute_iri(_ value: String) -> Bool {
-        let base = URL(string: "http://base.example.org/")!
+        let base = URL(string: "https://base.example.org/")!
         guard let u = URL(string: value, relativeTo: base) else {
             return false
         }
