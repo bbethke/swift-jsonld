@@ -493,9 +493,9 @@ extension JSON: CustomDebugStringConvertible {
     public var debugDescription: String {
         let u = unwrap()
         let options : JSONSerialization.WritingOptions
-        if #available(OSX 10.15, *) {
+        if #available(OSX 10.15, iOS 13, *) {
             options = [.fragmentsAllowed, .prettyPrinted, .withoutEscapingSlashes, .sortedKeys]
-        } else if #available(OSX 10.13, *) {
+        } else if #available(OSX 10.13, iOS 11, *) {
             options = [.fragmentsAllowed, .prettyPrinted, .sortedKeys]
         } else {
             options = [.fragmentsAllowed, .prettyPrinted]
